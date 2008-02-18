@@ -1,5 +1,5 @@
 /*
-  CodePeek - Google Code Search for Adobe RIA Developers
+  PureMVC Utility for AS3 / AIR - Desktop Citizen
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
