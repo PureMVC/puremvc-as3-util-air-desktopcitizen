@@ -9,7 +9,8 @@ Release Date: 02/23/08
       Author: Cliff Hall <clifford.hall@puremvc.org>
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
-1.1 - Moved source code into src folder. 
+1.1 - Moved source code into src folder. Updated XML Database swc, which
+      was updated for the same refactoring.
 
 1.0 - Initial release. Works with AIR Beta 3 and PureMVC 2.0 Extracted
       from the CodePeek demo.
