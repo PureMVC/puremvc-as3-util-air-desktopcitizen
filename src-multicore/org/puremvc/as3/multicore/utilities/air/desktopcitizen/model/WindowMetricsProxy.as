@@ -3,12 +3,12 @@
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
-package org.puremvc.as3.utilities.air.desktopcitizen.model
+package org.puremvc.as3.multicore.utilities.air.desktopcitizen.model
 {
 	import flash.geom.Rectangle;
 
-	import org.puremvc.as3.interfaces.*;
-	import org.puremvc.as3.patterns.proxy.Proxy;
+	import org.puremvc.as3.multicore.interfaces.*;
+	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
 	
 	/**
 	 * A proxy for the WindowMetrics data

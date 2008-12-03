@@ -3,13 +3,13 @@
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
-package org.puremvc.as3.utilities.air.desktopcitizen.model
+package org.puremvc.as3.multicore.utilities.air.desktopcitizen.model
 {
 	import flash.filesystem.File;
 	
-	import org.puremvc.as3.interfaces.*;
+	import org.puremvc.as3.multicore.interfaces.*;
 	
-	import org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy;
+	import org.puremvc.as3.multicore.utilities.air.xmldb.model.XMLDatabaseProxy;
 
 	/** 
 	 * Manages the XML Database for desktop window management

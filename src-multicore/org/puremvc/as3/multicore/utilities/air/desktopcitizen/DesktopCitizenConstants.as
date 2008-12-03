@@ -3,7 +3,7 @@
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
-package org.puremvc.as3.utilities.air.desktopcitizen
+package org.puremvc.as3.multicore.utilities.air.desktopcitizen
 {
 	/**
 	 * Constants for the Desktop Citizen Utility

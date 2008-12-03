@@ -3,13 +3,13 @@
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
-package org.puremvc.as3.utilities.air.desktopcitizen.controller
+package org.puremvc.as3.multicore.utilities.air.desktopcitizen.controller
 {
-	import org.puremvc.as3.interfaces.*;
-	import org.puremvc.as3.patterns.command.*;
-	import org.puremvc.as3.utilities.air.desktopcitizen.*;
-	import org.puremvc.as3.utilities.air.desktopcitizen.model.*;
-	import org.puremvc.as3.utilities.air.xmldb.controller.*;
+	import org.puremvc.as3.multicore.interfaces.*;
+	import org.puremvc.as3.multicore.patterns.command.*;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.*;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.model.*;
+	import org.puremvc.as3.multicore.utilities.air.xmldb.controller.*;
 
 	/**
 	 * Write the window metrics when the application exits

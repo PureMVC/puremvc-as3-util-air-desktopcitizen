@@ -3,7 +3,7 @@
   Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
-package org.puremvc.as3.utilities.air.desktopcitizen.view
+package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 {
 	import flash.display.NativeWindowDisplayState;
 	import flash.display.Stage;
@@ -14,11 +14,11 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 	import flash.geom.Rectangle;
 	import flash.system.Capabilities;
 	
-	import org.puremvc.as3.interfaces.*;
-	import org.puremvc.as3.patterns.mediator.Mediator;
-	import org.puremvc.as3.utilities.air.desktopcitizen.DesktopCitizenConstants;
-	import org.puremvc.as3.utilities.air.desktopcitizen.controller.WindowCloseCommand;
-	import org.puremvc.as3.utilities.air.desktopcitizen.model.WindowMetricsProxy;
+	import org.puremvc.as3.multicore.interfaces.*;
+	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.DesktopCitizenConstants;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.controller.WindowCloseCommand;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.model.WindowMetricsProxy;
 	
 	/**
 	 * A Mediator for interacting with the WindowedApplication Stage
