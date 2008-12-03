@@ -47,7 +47,10 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 			// pass the viewComponent to the superclass where 
 			// it will be stored in the inherited viewComponent property
 			super( NAME, viewComponent );
-	
+		}
+
+		override public function onRegister():void
+		{
 			// cache a reference to frequently used proxies			
 			windowMetricsProxy = facade.retrieveProxy( WindowMetricsProxy.NAME ) as WindowMetricsProxy;
 
@@ -56,9 +59,7 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 			stage.nativeWindow.addEventListener( NativeWindowDisplayStateEvent.DISPLAY_STATE_CHANGE, onFullScreen )
 			stage.nativeWindow.addEventListener( NativeWindowBoundsEvent.RESIZE, onResize );
 			stage.nativeWindow.addEventListener( NativeWindowBoundsEvent.MOVE, onResize );
-						
 		}
-
 
 		/**
 		 * List all notifications this Mediator is interested in.

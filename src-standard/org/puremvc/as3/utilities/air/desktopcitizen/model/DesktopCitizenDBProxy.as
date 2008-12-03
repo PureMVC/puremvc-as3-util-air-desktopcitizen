@@ -35,6 +35,10 @@ package org.puremvc.as3.utilities.air.desktopcitizen.model
 		 */ 
 		public function DesktopCitizenDBProxy( ) {
 			super( NAME );
+		}
+		
+		override public function onRegister():void
+		{
 			initialize( "DesktopCitizen.xml", File.applicationStorageDirectory );	
 		}
 
