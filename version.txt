@@ -6,15 +6,18 @@ Release Date: 12/02/08
     Platform: ActionScript 3 / AIR
      Version: 1 
     Revision: 2
+       Minor: 1
       Author: Cliff Hall <clifford.hall@puremvc.org>
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
-1.2 - Added MultiCore support. No Standard version functionality changes
-      except renaming source tree. So no need to migrate Standard version
-      apps to 1.2.
+1.2.1 - Refactored constructor logic into onRegister.
 
-1.1 - Moved source code into src folder. Updated XML Database swc, which
-      was updated for the same refactoring.
+1.2   - Added MultiCore support. No Standard version functionality changes
+        except renaming source tree. So no need to migrate Standard version
+        apps to 1.2.
 
-1.0 - Initial release. Works with AIR Beta 3 and PureMVC 2.0 Extracted
-      from the CodePeek demo.
+1.1   - Moved source code into src folder. Updated XML Database swc, which
+        was updated for the same refactoring.
+
+1.0   - Initial release. Works with AIR Beta 3 and PureMVC 2.0 Extracted
+        from the CodePeek demo.
