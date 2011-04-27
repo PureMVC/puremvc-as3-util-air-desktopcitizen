@@ -1,6 +1,6 @@
 /*
   PureMVC Utility for AS3 / AIR - Desktop Citizen
-  Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+  Copyright(c) 2007-10 Cliff Hall <clifford.hall@puremvc.org>
   Your reuse is governed by the Creative Commons Attribution 3.0 License
  */
 package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
@@ -26,13 +26,13 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 	public class WindowMediator extends Mediator implements IMediator
 	{
 		// Cannonical name of the Mediator
-		public static const NAME:String = 'DesktopCitizenWindowMediator';
+		public static const NAME:String = DesktopCitizenConstants.UTIL+"WindowMediator";
 
 		// Notification Constants specific to this mediator
-		public static const WINDOW_SHOW:String		= "DesktopCitizenWindowShow";
-		public static const SET_DEFAULT:String		= "DesktopCitizenSetDefault";
-		public static const SET_BOUNDS:String		= "DesktopCitizenSetBounds";
-		public static const SET_FULLSCREEN:String	= "DesktopCitizenSetFullScreen";
+		public static const WINDOW_SHOW:String		= NAME+"/WindowShow";
+		public static const SET_DEFAULT:String		= NAME+"/SetDefault";
+		public static const SET_BOUNDS:String		= NAME+"/SetBounds";
+		public static const SET_FULLSCREEN:String	= NAME+"/SetFullScreen";
 
 		// Constant for Minimum stage width
 		public static const MIN_WIDTH:Number = 800;
@@ -75,7 +75,10 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 			return [ SET_DEFAULT,
 					 SET_BOUNDS,
 					 SET_FULLSCREEN,
-					 WINDOW_SHOW	 ];
+					 WINDOW_SHOW,
+					 DesktopCitizenConstants.ENABLE_CONFIRM,
+					 DesktopCitizenConstants.CONFIRM_CLOSING
+					];
 		}
 
 		/**
@@ -89,8 +92,8 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 		 */
 		override public function handleNotification( note:INotification ):void 
 		{
-			switch ( note.getName() ) {
-				
+			switch ( note.getName() ) 
+			{
 				// The max size of the window was passed in as a Point
 				// Set the window size accordingly
 				case SET_DEFAULT:
@@ -121,6 +124,16 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 					stage.nativeWindow.visible = true;
 					sendNotification( DesktopCitizenConstants.WINDOW_READY );
 					break;
+
+				case DesktopCitizenConstants.CONFIRM_CLOSING:
+					needConfirm = false;
+					stage.nativeWindow.close();
+					break;
+				
+				case DesktopCitizenConstants.ENABLE_CONFIRM:
+					needConfirm = true;
+					break;
+
 			}
 		}
 
@@ -129,19 +142,20 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 		 * 
 		 * @param event the resize event
 		 */
-		protected function onResize( event:Event ):void
+		protected function onResize( event:NativeWindowBoundsEvent ):void
 		{
-			//sendNotification( ApplicationFacade.VIEW_RESIZED, stage.window.bounds );
 			// The StageMediator passed in a Rectangle representing the size and location
-			var rect:Rectangle = stage.nativeWindow.bounds as Rectangle;
+			var rect:Rectangle = event.afterBounds;
 			
 			// Only save the changes to size and location if not minimized or maximized
 			if ( windowMetricsProxy.displayState == NativeWindowDisplayState.NORMAL ) windowMetricsProxy.bounds = rect;
 			
 			// If this is the result of the window being resized programatically
 			// at startup, then it's time to show the window now.
-			sendNotification( WINDOW_SHOW );
-			
+			if (firstPass) {
+				firstPass = false;
+				sendNotification( WINDOW_SHOW );
+			} 
 		}				
 		
 		/**
@@ -163,8 +177,14 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 		 */
 		protected function onWindowClosing( event:Event ):void
 		{
-			stage.nativeWindow.visible = false;
-			sendNotification( WindowCloseCommand.NAME );
+			if( needConfirm )
+			{
+				event.preventDefault();
+				sendNotification( DesktopCitizenConstants.WINDOW_CLOSING );
+	  		} else {
+	  			stage.nativeWindow.visible = false;
+				sendNotification( WindowCloseCommand.NAME );
+	  		}
 		}				
 					
 		/**
@@ -175,20 +195,14 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.view
 		 * PureMVC Mediator class defines a viewComponent
 		 * property of type Object. </P>
 		 * 
-		 * <P>
-		 * Here, we cast the generic viewComponent to 
-		 * its actual type in a protected mode. This 
-		 * retains encapsulation, while allowing the instance
-		 * (and subclassed instance) access to a 
-		 * strongly typed reference with a meaningful
-		 * name.</P>
-		 * 
 		 * @return stage the viewComponent cast to flash.display.Stage
 		 */
 		protected function get stage():Stage{
 			return viewComponent as Stage;
 		}
-
+		
 		protected var windowMetricsProxy:WindowMetricsProxy;
+		private var firstPass:Boolean = true;
+		private var needConfirm:Boolean = false;
 	}
 }

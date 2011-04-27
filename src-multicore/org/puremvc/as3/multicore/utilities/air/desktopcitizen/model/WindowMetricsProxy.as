@@ -6,16 +6,17 @@
 package org.puremvc.as3.multicore.utilities.air.desktopcitizen.model
 {
 	import flash.geom.Rectangle;
-
+	
 	import org.puremvc.as3.multicore.interfaces.*;
 	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
+	import org.puremvc.as3.multicore.utilities.air.desktopcitizen.DesktopCitizenConstants;
 	
 	/**
 	 * A proxy for the WindowMetrics data
 	 */
 	public class WindowMetricsProxy extends Proxy implements IProxy
 	{
-		public static const NAME:String = 'DestopCitizenWindowMetricsProxy';
+		public static const NAME:String = DesktopCitizenConstants.UTIL+"WindowMetricsProxy";
 
 		public function WindowMetricsProxy( data:Object ) 
 		{

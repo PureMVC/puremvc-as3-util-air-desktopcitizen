@@ -10,10 +10,17 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen
 	 */
 	public class DesktopCitizenConstants 
 	{
+		// Utility name prefix
+		public static const UTIL:String 			= "DesktopCitizen/"
+
 		// Notification constants
-		public static const WINDOW_OPEN:String		= "DesktopCitizenWindowOpem";
-		public static const WINDOW_READY:String		= "DesktopCitizenWindowReady";
-		public static const WINDOW_CLOSED:String	= "DesktopCitizenWindowClosed";
-		
+		public static const WINDOW_OPEN:String		= UTIL+"WindowOpen";
+		public static const WINDOW_READY:String		= UTIL+"WindowReady";
+
+		public static const ENABLE_CONFIRM:String	= UTIL+"EnableConfirm";
+		public static const WINDOW_CLOSING:String	= UTIL+"WindowClosing";
+		public static const CONFIRM_CLOSING:String	= UTIL+"WindowClose";
+
+		public static const WINDOW_CLOSED:String	= UTIL+"WindowClosed";
 	}
 }

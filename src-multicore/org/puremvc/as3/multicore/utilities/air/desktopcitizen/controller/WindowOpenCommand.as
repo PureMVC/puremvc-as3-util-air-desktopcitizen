@@ -26,7 +26,7 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.controller
 	 */
 	public class WindowOpenCommand extends SimpleCommand
 	{
-		public static const NAME:String = 'DestopCitizenWindowOpenCommand';
+		public static const NAME:String = DesktopCitizenConstants.UTIL+"WindowOpenCommand";
 
 		override public function execute( note:INotification ) :void	
 		{

@@ -8,7 +8,7 @@ package org.puremvc.as3.utilities.air.desktopcitizen.model
 	import flash.filesystem.File;
 	
 	import org.puremvc.as3.interfaces.*;
-	
+	import org.puremvc.as3.utilities.air.desktopcitizen.DesktopCitizenConstants;
 	import org.puremvc.as3.utilities.air.xmldb.model.XMLDatabaseProxy;
 
 	/** 
@@ -22,7 +22,7 @@ package org.puremvc.as3.utilities.air.desktopcitizen.model
 	 */
 	public class DesktopCitizenDBProxy extends XMLDatabaseProxy
 	{
-		public static const NAME:String = 'DesktopCitizenDBProxy';
+		public static const NAME:String = DesktopCitizenConstants.UTIL+"DBProxy";
 		
 		/**
 		 * Constructor 

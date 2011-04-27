@@ -19,7 +19,7 @@ package org.puremvc.as3.multicore.utilities.air.desktopcitizen.controller
 	 */
 	public class WindowCloseCommand extends SimpleCommand
 	{
-		public static const NAME:String = 'DestopCitizenWindowOpenCommand';
+		public static const NAME:String = DesktopCitizenConstants.UTIL+"WindowCloseCommand";
 		
 		/**
 		 * Persist the DesktopCitizenDB and alert the app that the window is closed. 

@@ -1,15 +1,20 @@
 PureMVC Utility for AS3 / AIR - Desktop Citizen
-Copyright(c) 2007-08 Cliff Hall <clifford.hall@puremvc.org>
+Copyright(c) 2007-10 Cliff Hall <clifford.hall@puremvc.org>
 Your reuse is governed by the Creative Commons Attribution 3.0 License
 --------------------------------------------------------------------------
-Release Date: 12/02/08
+Release Date: 04/27/11
     Platform: ActionScript 3 / AIR
      Version: 1 
-    Revision: 2
-       Minor: 1
+    Revision: 3
       Author: Cliff Hall <clifford.hall@puremvc.org>
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
+1.3	  - Added support for WindowedApplication (previously only Application
+		was supported). Added ENABLE_CONFIRM/CONFIRM_CLOSING notes that give 
+		you a hook into the process of closing a window. Refactored the note
+		naming scheme. Major thanks to Ondina for the work she did on this:
+		http://forums.puremvc.org/index.php?topic=1145.0
+
 1.2.1 - Refactored constructor logic into onRegister.
 
 1.2   - Added MultiCore support. No Standard version functionality changes
