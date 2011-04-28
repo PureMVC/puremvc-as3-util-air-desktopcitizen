@@ -4,7 +4,7 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../../../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../../../../../print.css" type="text/css" media="print">
-<meta content="WindowMediator,org.puremvc.as3.utilities.air.desktopcitizen.view.WindowMediator,MIN_HEIGHT,MIN_WIDTH,NAME,SET_BOUNDS,SET_DEFAULT,SET_FULLSCREEN,WINDOW_SHOW,windowMetricsProxy,stage,handleNotification,listNotificationInterests,onFullScreen,onResize,onWindowClosing" name="keywords">
+<meta content="WindowMediator,org.puremvc.as3.utilities.air.desktopcitizen.view.WindowMediator,MIN_HEIGHT,MIN_WIDTH,NAME,SET_BOUNDS,SET_DEFAULT,SET_FULLSCREEN,WINDOW_SHOW,windowMetricsProxy,stage,handleNotification,listNotificationInterests,onFullScreen,onRegister,onResize,onWindowClosing" name="keywords">
 <title>org.puremvc.as3.utilities.air.desktopcitizen.view.WindowMediator</title>
 </head>
 <body>
@@ -100,6 +100,13 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
    List all notifications this Mediator is interested in.</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#onRegister()">onRegister</a>():void</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">WindowMediator</td>
+</tr>
 </table>
 </div>
 <a name="protectedMethodSummary"></a>
@@ -120,7 +127,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#onResize()">onResize</a>(event:Event):void</div>
+<a class="signatureLink" href="#onResize()">onResize</a>(event:NativeWindowBoundsEvent):void</div>
 <div class="summaryTableDescription">
    Handle resize event dispatched from the viewComponent.</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
@@ -151,23 +158,23 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#NAME">NAME</a> : String = "DesktopCitizenWindowMediator"<div class="summaryTableDescription">[static]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#NAME">NAME</a> : String<div class="summaryTableDescription">[static]</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_BOUNDS">SET_BOUNDS</a> : String = "DesktopCitizenSetBounds"<div class="summaryTableDescription">[static]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_BOUNDS">SET_BOUNDS</a> : String<div class="summaryTableDescription">[static]</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_DEFAULT">SET_DEFAULT</a> : String = "DesktopCitizenSetDefault"<div class="summaryTableDescription">[static]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_DEFAULT">SET_DEFAULT</a> : String<div class="summaryTableDescription">[static]</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_FULLSCREEN">SET_FULLSCREEN</a> : String = "DesktopCitizenSetFullScreen"<div class="summaryTableDescription">[static]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SET_FULLSCREEN">SET_FULLSCREEN</a> : String<div class="summaryTableDescription">[static]</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 <tr class="">
-<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#WINDOW_SHOW">WINDOW_SHOW</a> : String = "DesktopCitizenWindowShow"<div class="summaryTableDescription">[static]</div>
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#WINDOW_SHOW">WINDOW_SHOW</a> : String<div class="summaryTableDescription">[static]</div>
 </td><td class="summaryTableOwnerCol">WindowMediator</td>
 </tr>
 </table>
@@ -188,19 +195,6 @@ showHideInherited();
 <div class="detailBody">
 <code>stage:Stage</code>&nbsp;&nbsp;[read-only]<p>
    Cast the viewComponent to its actual type.
-   
-   <P>
-   This is a useful idiom for mediators. The
-   PureMVC Mediator class defines a viewComponent
-   property of type Object. </P>
-   
-   <P>
-   Here, we cast the generic viewComponent to 
-   its actual type in a protected mode. This 
-   retains encapsulation, while allowing the instance
-   (and subclassed instance) access to a 
-   strongly typed reference with a meaningful
-   name.</P>
    
    </p><span class="label">Implementation</span>
 <br>
@@ -298,6 +292,15 @@ showHideInherited();
 </tr>
 </table>
 </div>
+<a name="onRegister()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onRegister</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function onRegister():void</code>
+</div>
 <a name="onResize()"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -305,13 +308,13 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>protected function onResize(event:Event):void</code><p>
+<code>protected function onResize(event:NativeWindowBoundsEvent):void</code><p>
    Handle resize event dispatched from the viewComponent.
    
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">event</span>:Event</code> &mdash; the resize event
+<td width="20px"></td><td><code><span class="label">event</span>:NativeWindowBoundsEvent</code> &mdash; the resize event
    </td>
 </tr>
 </table>
@@ -361,7 +364,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static const NAME:String = "DesktopCitizenWindowMediator"</code>
+<code>public static const NAME:String</code>
 </div>
 <a name="SET_BOUNDS"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -370,7 +373,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static const SET_BOUNDS:String = "DesktopCitizenSetBounds"</code>
+<code>public static const SET_BOUNDS:String</code>
 </div>
 <a name="SET_DEFAULT"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -379,7 +382,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static const SET_DEFAULT:String = "DesktopCitizenSetDefault"</code>
+<code>public static const SET_DEFAULT:String</code>
 </div>
 <a name="SET_FULLSCREEN"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -388,7 +391,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static const SET_FULLSCREEN:String = "DesktopCitizenSetFullScreen"</code>
+<code>public static const SET_FULLSCREEN:String</code>
 </div>
 <a name="WINDOW_SHOW"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
@@ -397,7 +400,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public static const WINDOW_SHOW:String = "DesktopCitizenWindowShow"</code>
+<code>public static const WINDOW_SHOW:String</code>
 </div>
 <br>
 <br>
