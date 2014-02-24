@@ -39,6 +39,8 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 		// Constant for Minimum stage height
 		public static const MIN_HEIGHT:Number = 570;
 		
+		private var lastRect:Rectangle;
+		
 		/**
 		 * Constructor. 
 		 */
@@ -142,10 +144,10 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 		 * @param event the resize event
 		 */
 		protected function onResize( event:NativeWindowBoundsEvent ):void
-		{
+		{ 
 			// The StageMediator passed in a Rectangle representing the size and location
 			var rect:Rectangle = event.afterBounds;
-			
+			lastRect = windowMetricsProxy.bounds;
 			// Only save the changes to size and location if not minimized or maximized
 			if ( windowMetricsProxy.displayState == NativeWindowDisplayState.NORMAL ) windowMetricsProxy.bounds = rect;
 			
@@ -154,7 +156,7 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 			if (firstPass) {
 				firstPass = false;
 				sendNotification( WINDOW_SHOW );
-			} 
+			}
 		}				
 		
 		/**
@@ -164,9 +166,12 @@ package org.puremvc.as3.utilities.air.desktopcitizen.view
 		 */
 		protected function onFullScreen( event:NativeWindowDisplayStateEvent ):void
 		{
+			
 			// Update the WindoMetrics display_state property 
 			windowMetricsProxy.displayState = String( event.afterDisplayState );
-			
+			if ( windowMetricsProxy.displayState == NativeWindowDisplayState.MAXIMIZED ) {
+				windowMetricsProxy.bounds = lastRect;
+			}
 		}				
 					
 		/**
